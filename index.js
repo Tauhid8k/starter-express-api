@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const Product = require('./models/ProductModel');
 const app = express();
 
@@ -16,6 +17,7 @@ const connectDB = async () => {
 connectDB();
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 
 // Home Page
