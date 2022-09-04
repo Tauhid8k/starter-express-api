@@ -15,6 +15,11 @@ const connectDB = async () => {
 };
 connectDB();
 
+// Home Page
+app.get('/', function (req, res) {
+  res.send('React E-Commerce API');
+});
+
 // Products Route
 app.get('/products', async function (req, res) {
   const products = await Product.find();
@@ -36,11 +41,6 @@ app.get('/products/:id', async function (req, res) {
     res.status(404);
     throw new Error('Product not found');
   }
-});
-
-// Simple Page
-app.all('/', function (req, res) {
-  res.send('React E-Commerce API');
 });
 
 app.listen(process.env.PORT || 3000);
