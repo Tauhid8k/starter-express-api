@@ -38,4 +38,9 @@ app.get('/products/:id', async function (req, res) {
   }
 });
 
+// Simple Page
+app.all('/', function (req, res) {
+  res.send('React E-Commerce API');
+});
+
 app.listen(process.env.PORT || 3000);
