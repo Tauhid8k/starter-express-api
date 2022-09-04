@@ -15,6 +15,9 @@ const connectDB = async () => {
 };
 connectDB();
 
+// Middleware
+app.use(express.json());
+
 // Home Page
 app.get('/', function (req, res) {
   res.send('React E-Commerce API');
